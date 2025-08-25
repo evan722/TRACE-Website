@@ -14,7 +14,10 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: 'dist',
+    // Emit the production build to `docs` so GitHub Pages can serve it
+    // directly from the repository without additional configuration.
+    outDir: 'docs',
+    emptyOutDir: true,
   },
 }));
 
