@@ -6,6 +6,7 @@ import path from 'node:path';
 // base and a `dist` output directory work well for both development and
 // production builds.
 export default defineConfig({
+
   plugins: [react()],
   resolve: {
     alias: {
@@ -17,3 +18,4 @@ export default defineConfig({
     emptyOutDir: true,
   },
 });
+
