@@ -5,7 +5,10 @@ import path from 'node:path';
 // Use a relative base during local development but ensure assets are
 // referenced with the repository path when deployed to GitHub Pages.
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/TRACE-Website/' : '/',
+  // Use a relative base in production so the site works whether it's
+  // served from the repository root or a subfolder like GitHub Pages
+  // project's `/docs` directory.
+  base: mode === 'production' ? './' : '/',
 
   plugins: [react()],
   resolve: {
