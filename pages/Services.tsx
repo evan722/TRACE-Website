@@ -59,7 +59,7 @@ export default function ServicesPage() {
         }
     }, []);
 
-    const handlePurchase = (deviceName) => {
+    const handlePurchase = (deviceName: string) => {
         // In a real app, this would integrate with a payment processor
         alert(`Redirecting to purchase ${deviceName}...`);
     };
