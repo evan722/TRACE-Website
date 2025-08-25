@@ -108,7 +108,7 @@ export default function CareersPage() {
                                         <p className="text-gray-600 mt-1">{job.location} &middot; {job.type}</p>
                                     </div>
                                     <Button asChild className="mt-4 md:mt-0 bg-gray-900 hover:bg-gray-800 group-hover:bg-blue-600">
-                                        <Link to={createPageUrl("JobApplication") + `?position=${job.id}`}>Apply Now</Link>
+                                        <Link to={createPageUrl("JobApplications") + `?position=${job.id}`}>Apply Now</Link>
                                     </Button>
                                 </div>
                             ))}

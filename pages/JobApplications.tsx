@@ -9,11 +9,17 @@ import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 
 export default function JobApplicationPage() {
-    const [formData, setFormData] = useState({
-        name: "", 
-        email: "", 
-        phone: "", 
-        coverLetter: "", 
+    const [formData, setFormData] = useState<{
+        name: string;
+        email: string;
+        phone: string;
+        coverLetter: string;
+        resume: File | null;
+    }>({
+        name: "",
+        email: "",
+        phone: "",
+        coverLetter: "",
         resume: null
     });
     const [submitted, setSubmitted] = useState(false);
@@ -27,18 +33,18 @@ export default function JobApplicationPage() {
         else setPosition('Open Position');
     }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Application submitted:", formData);
         setSubmitted(true);
     };
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleFileChange = (e) => {
-        setFormData({ ...formData, resume: e.target.files[0] });
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({ ...formData, resume: e.target.files ? e.target.files[0] : null });
     };
 
     if (submitted) {
