@@ -6,6 +6,7 @@ import path from 'node:path';
 // referenced with the repository path when deployed to GitHub Pages.
 export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/TRACE-Website/' : '/',
+
   plugins: [react()],
   resolve: {
     alias: {
@@ -16,3 +17,4 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
   },
 }));
+
