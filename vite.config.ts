@@ -2,13 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'node:path';
 
-// Use a relative base during local development but ensure assets are
-// referenced with the repository path when deployed to GitHub Pages.
-export default defineConfig(({ mode }) => ({
-  // Use a relative base in production so the site works whether it's
-  // served from the repository root or a subfolder like GitHub Pages
-  // project's `/docs` directory.
-  base: mode === 'production' ? './' : '/',
+// Vercel serves the build output from the project root, so the default
+// base and a `dist` output directory work well for both development and
+// production builds.
+export default defineConfig({
 
   plugins: [react()],
   resolve: {
@@ -17,10 +14,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Emit the production build to `docs` so GitHub Pages can serve it
-    // directly from the repository without additional configuration.
-    outDir: 'docs',
+    outDir: 'dist',
     emptyOutDir: true,
   },
-}));
+});
 
