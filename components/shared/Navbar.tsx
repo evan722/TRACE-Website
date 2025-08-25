@@ -22,7 +22,7 @@ export default function Navbar() {
     { name: "Careers", href: createPageUrl("Careers") },
   ];
 
-  const getLinkClass = (href) => {
+  const getLinkClass = (href: string) => {
     return location.pathname === href
       ? "text-blue-600 font-semibold"
       : "text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium";
