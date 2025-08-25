@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
   // served from the repository root or a subfolder like GitHub Pages
   // project's `/docs` directory.
   base: mode === 'production' ? './' : '/',
+
   plugins: [react()],
   resolve: {
     alias: {
@@ -22,3 +23,4 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
   },
 }));
+
