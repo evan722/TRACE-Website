@@ -6,11 +6,7 @@ import { ArrowRight, Eye, Search } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
-      {/* Gradient Shapes */}
-      <div className="absolute top-0 -left-1/3 w-2/3 h-full bg-gradient-to-r from-blue-50 to-white transform -skew-x-12 opacity-70" />
-      <div className="absolute top-0 -right-1/2 w-2/3 h-full bg-gradient-to-l from-purple-50 to-white transform skew-x-12 opacity-50" />
-
+    <section className="relative min-h-screen flex items-start pt-32 bg-white overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl text-left">
           <div className="space-y-8 animate-fade-in">
