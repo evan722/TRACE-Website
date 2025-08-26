@@ -10,7 +10,10 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+    window.location.href = `mailto:traceappdevelopmentteam@gmail.com?subject=${encodeURIComponent(
+      "TRACE Contact"
+    )}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);

@@ -35,7 +35,10 @@ export default function JobApplicationPage() {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Application submitted:", formData);
+        const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nCover Letter:\n${formData.coverLetter}`;
+        window.location.href = `mailto:traceappdevelopmentteam@gmail.com?subject=${encodeURIComponent(
+            `Job Application: ${position}`
+        )}&body=${encodeURIComponent(body)}`;
         setSubmitted(true);
     };
 
